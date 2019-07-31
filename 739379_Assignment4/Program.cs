@@ -22,41 +22,78 @@ namespace _739379_Assignment4
 
     class Gematria
     {
+        int temp;
 
         public static Dictionary<string, int> LetterValue = new Dictionary<string, int>(){
                 {"A",1},
                 {"B", 2},
-                {"C",3}
+                {"C",3},
+                {"D",4},
+                {"E",5},
+                {"F",6},
+                {"G",7},
+                {"H",8},
+                {"I",9},
+                {"J",10},
+                {"K",11},
+                {"L",12},
+                {"M",13},
+                {"N",14},
+                {"O",15},
+                {"P",16},
+                {"Q",17},
+                {"R",18},
+                {"S",19},
+                {"T",20},
+                {"U",11},
+                {"V",22},
+                {"W",23},
+                {"X",24},
+                {"Y",25},
+                {"Z",26}
             };
 
         public void Run()
         {
             Console.WriteLine("Tell me your Name");
             string name = Console.ReadLine();
-            this.RunGeomatriaCalculator(name);
-            
+            int total = this.RunGeomatriaCalculator(name);
+
+            Console.WriteLine("Total is " + total);
+
+
         }
 
-        private void RunGeomatriaCalculator(string name)
+        private int RunGeomatriaCalculator(string name)
         {
+            int GematricValue = 0, total = 0;
             // walk over string and pluck
             foreach (char letter in name)
             {
                 Console.WriteLine(letter);
                 // int numValue = getletterNumber(letter);
-                this.RunGeomatriaCalculator(letter);
+                //this.RunGeomatriaCalculator(letter);
+
+                GematricValue = this.ReturnGeomatriaCalculator(letter.ToString());
+                total += GematricValue;
 
 
 
             }
+            return total;
 
+        }
+
+        private int ReturnGeomatriaCalculator(string v)
+        {
+            return LetterValue[v.ToUpper()];
         }
 
         private void RunGeomatriaCalculator(char letter)
         {
             // walk over string and pluck
-            int temp = LetterValue["B"];
-            Console.WriteLine(temp);
+            temp = LetterValue[letter.ToString()];
+           // Console.WriteLine(temp);
 
         }
 
@@ -86,7 +123,7 @@ namespace _739379_Assignment4
             };
 
             int temp = LetterValue["B"];
-            Console.WriteLine(LetterValue["A"]);
+            //Console.WriteLine(LetterValue["A"]);
         }
     }
 }
