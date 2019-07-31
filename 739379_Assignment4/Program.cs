@@ -67,6 +67,7 @@ namespace _739379_Assignment4
         private int RunGeomatriaCalculator(string name)
         {
             int GematricValue = 0, total = 0;
+            int n, m, sum = 0;
             // walk over string and pluck
             foreach (char letter in name)
             {
@@ -78,9 +79,30 @@ namespace _739379_Assignment4
                 total += GematricValue;
 
 
-
             }
-            return total;
+
+
+            sum = reduceSum();
+            int reduceSum()
+            {
+                while (total > 0 || sum > 9)
+                {
+                    if (total == 0)
+                    {
+                        total = sum;
+                        sum = 0;
+                    }
+                    sum += total % 10;
+                    total /= 10;
+                }
+                return sum;
+
+               
+                
+            }
+            
+
+            return sum;
 
         }
 
