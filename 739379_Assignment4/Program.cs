@@ -26,7 +26,7 @@ namespace _739379_Assignment4
 
         public static Dictionary<string, int> LetterValue = new Dictionary<string, int>(){
                 {"A",1},
-                {"B", 2},
+                {"B",2},
                 {"C",3},
                 {"D",4},
                 {"E",5},
@@ -45,7 +45,7 @@ namespace _739379_Assignment4
                 {"R",18},
                 {"S",19},
                 {"T",20},
-                {"U",11},
+                {"U",21},
                 {"V",22},
                 {"W",23},
                 {"X",24},
